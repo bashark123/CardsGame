@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class CardsGame {
 	public static void main(String[] args) {
@@ -7,13 +9,50 @@ public class CardsGame {
 		for(int x = 0 ; x < 8 ; x++) {
 			hand[x] = dealer.getCard();
 			hand[x].printCard();
-			dealer.convertToValue(dealer.getCard())	;
+			}
+		Dealer sort = new Dealer();
+		System.out.println(sort.convertToValue(null));
+		System.out.println("Do You want new cards? y/n");
+
+		Scanner sc = new Scanner(System.in);
+		char c = sc.next().charAt(0);
+/*		boolean deal = true;
+		while(deal) {*/
+			switch(c) {
+			case 'y':
+				for(int x = 0 ; x < 8 ; x++) {
+					hand[x] = dealer.getCard();
+					hand[x].printCard();
+					}
+				break;
+			case 'n':
+				System.out.println("good");
+			break;
+			default :
+			//	deal = false;
+				System.out.println("invalid entry please try again");
+				break;
+			}
+		}
+			
+/*		dealer.convertToValue(dealer.getCard())	;
+		
+		Card[] sortedHand = new Card[8];
+		boolean notSorted = false;
+		while 	(notSorted)	
+		for (int i = 0; i < 8; i++) {
+			sortedHand[i]=dealer.convertToValue();
+
+			//dealer.convertToValue();
+		//sortedHand[i] = ;
+		}
+			*/
 		
 			
 			
-		}
+		
 //		hand.sort();
-	}
+	
 	static void testFunctionality() {
 	}
 }
@@ -66,4 +105,7 @@ class Dealer{
 	Card getCard() {
 		return getCardFromNumber(generateRandomNumber());
 	}
+/*	Card getSortedCard() {
+		return getSortedCardNumber()
+	}*/
 }
