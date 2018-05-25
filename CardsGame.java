@@ -10,14 +10,24 @@ public class CardsGame {
 			hand[x] = dealer.getCard();
 			hand[x].printCard();
 			}
-		Dealer sort = new Dealer();
-		System.out.println(sort.convertToValue(null));
+		/*Dealer sort = new Dealer();
+		System.out.println(sort.convertToValue(null));*/
+		
+		Card[] sortedHand = new Card[8];
+		/*boolean notSorted = false;
+		while 	(notSorted)	*/
+
+
+		
 		System.out.println("Do You want new cards? y/n");
 
 		Scanner sc = new Scanner(System.in);
 		char c = sc.next().charAt(0);
-/*		boolean deal = true;
-		while(deal) {*/
+
+		if (c == 'y') {
+		//		boolean deal = true;
+		while(true) {
+		System.out.println("Do You want new cards? y/n");
 			switch(c) {
 			case 'y':
 				for(int x = 0 ; x < 8 ; x++) {
@@ -27,6 +37,7 @@ public class CardsGame {
 				break;
 			case 'n':
 				System.out.println("good");
+				System.out.println(dealer.convertToValue(dealer.getCard()));
 			break;
 			default :
 			//	deal = false;
@@ -34,8 +45,10 @@ public class CardsGame {
 				break;
 			}
 		}
+		}
+	}
 			
-/*		dealer.convertToValue(dealer.getCard())	;
+/*	 dealer.convertToValue(dealer.getCard())	;
 		
 		Card[] sortedHand = new Card[8];
 		boolean notSorted = false;
